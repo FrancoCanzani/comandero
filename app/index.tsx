@@ -13,7 +13,7 @@ export default function IndexScreen() {
 
     if (allowedNames.includes(lowercaseName)) {
       setName('');
-      router.replace('/(tabs)/tables');
+      router.replace('/(tabs)/mesas');
     } else {
       Alert.alert(
         'Error',

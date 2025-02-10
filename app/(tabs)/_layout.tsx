@@ -28,7 +28,7 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name='tables'
+        name='mesas'
         options={{
           title: 'Mesas',
           tabBarIcon: ({ color, focused }) => (
