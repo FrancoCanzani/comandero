@@ -37,7 +37,7 @@ export default function RootLayout() {
         <Stack.Screen
           name='tables/[id]'
           options={{
-            title: 'Table Details',
+            title: 'Detalles de Mesa',
             presentation: 'modal',
           }}
         />

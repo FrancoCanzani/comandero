@@ -1,28 +1,22 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { useRouter } from 'expo-router';
+import { View, Text, StyleSheet } from 'react-native';
+import { Link } from 'expo-router';
 
-const tableNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const tableNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 22, 23, 45, 67, 89];
 
 export default function TablesScreen() {
-  const router = useRouter();
-
-  const handleTableSelect = (tableNumber: number) => {
-    router.push(`/tables/${tableNumber}`);
-  };
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Mesas</Text>
       <View style={styles.gridContainer}>
         {tableNumbers.map((number) => (
-          <TouchableOpacity
+          <Link
             key={number}
             style={styles.tableButton}
-            onPress={() => handleTableSelect(number)}
+            href={`/tables/${number}`}
           >
             <Text style={styles.buttonText}>Mesa {number}</Text>
-          </TouchableOpacity>
+          </Link>
         ))}
       </View>
     </View>
@@ -36,9 +30,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#f5f5f5',
   },
   title: {
-    fontSize: 24,
+    fontSize: 32,
     textAlign: 'center',
     marginBottom: 20,
+    fontWeight: 'bold',
   },
   gridContainer: {
     flexDirection: 'row',
@@ -49,8 +44,8 @@ const styles = StyleSheet.create({
   tableButton: {
     backgroundColor: '#007bff',
     padding: 20,
-    borderRadius: 10,
-    width: '30%',
+    borderRadius: 4,
+    width: '100%',
     alignItems: 'center',
   },
   buttonText: {
